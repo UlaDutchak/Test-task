@@ -1,0 +1,22 @@
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 18rem;
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &-button {
+    border: transparent;
+    background-color: transparent;
+  }
+}
