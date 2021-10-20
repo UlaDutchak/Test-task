@@ -1,6 +1,6 @@
-# PLANT IN
+# Test-task
 
-1. [DEMO LINK](https://uladutchak.github.io/test-task/)
+1. [DEMO LINK](https://uladutchak.github.io/Test-task/)
 
 # Local development
 
