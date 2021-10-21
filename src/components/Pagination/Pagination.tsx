@@ -5,7 +5,7 @@ import './Pagination.scss';
 type Props = {
   photosPerPage: number;
   totalPhotos: number;
-  paginate: (pageNumber: number) => void;
+  paginate: (pageNumber: number, event: React.MouseEvent<HTMLElement>) => void;
 };
 
 export const Pagination: React.FC<Props> = (props) => {
@@ -31,7 +31,7 @@ export const Pagination: React.FC<Props> = (props) => {
             <a
               href="!#"
               className="page-link"
-              onClick={() => paginate(number)}
+              onClick={(event:React.MouseEvent<HTMLElement>) => paginate(number, event)}
             >
               {number}
             </a>

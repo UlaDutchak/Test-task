@@ -32,7 +32,8 @@ export const App: React.FC = () => {
   const indexOfFirstPost = indexOfLastPost - photosPerPage;
   const currentPhotos = photos.slice(indexOfFirstPost, indexOfLastPost);
 
-  const paginate = (pageNumber: number) => {
+  const paginate = (pageNumber: number, event: React.MouseEvent<HTMLElement>) => {
+    event.preventDefault();
     setCurretPage(pageNumber);
   };
 
