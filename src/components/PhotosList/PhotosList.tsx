@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import Modali from 'react-modal';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './PhotosList.scss';
+import { Modal } from '../Modal/Modal';
 
 type Props = {
   photos: Photos[];
@@ -11,27 +11,6 @@ type Props = {
 
 export const PhotosList: React.FC<Props> = (props) => {
   const { photos, loading, deletePhoto } = props;
-  const [modalIsOpen, setIsOpen] = useState(false);
-
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transition: 'transform 0.2s',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
-
-  const openModal = () => {
-    setIsOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsOpen(false);
-  };
 
   return (
     <div className="cards">
@@ -40,26 +19,7 @@ export const PhotosList: React.FC<Props> = (props) => {
           {photos.map(photo => {
             return (
               <div className="card" key={photo.id}>
-                <button type="button" className="card-button" onClick={openModal}>
-                  <img
-                    src={photo.url}
-                    className="card-img-top"
-                    alt="..."
-                  />
-                </button>
-                <Modali
-                  isOpen={modalIsOpen}
-                  onRequestClose={closeModal}
-                  contentLabel="Example Modal"
-                  style={customStyles}
-                >
-                  <button type="button" onClick={closeModal} className="btn-close" aria-label="Close"></button>
-                  <img
-                    src={photo.url}
-                    className="card-img-top"
-                    alt="..."
-                  />
-                </Modali>
+                <Modal selectedUrl={photo.url} />
                 <div className="card-body">
                   <p className="card-text">{photo.title}</p>
                   <button
