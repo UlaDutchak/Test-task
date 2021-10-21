@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://jsonplaceholder.typicode.com';
+export const BASE_URL = 'https://jsonplaceholder.typicode.com';
 
 const request = async (url: string, item = {}) => {
   const response = await fetch(`${BASE_URL}${url}`, item);
